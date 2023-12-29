@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { TodoItem } from './todo-item';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,7 @@ export class TodoService {
       created: new Date(),
     }
   ]
+  next_id: number = 4;
 
   constructor() { }
 
@@ -31,5 +33,15 @@ export class TodoService {
 
   getTodoById(id: number): TodoItem | undefined {
     return this.todos.find(todo => todo.id === id);
+  }
+
+  addTodo(title: string, id?: number) {
+    const newTodo: TodoItem = {
+      title: title,
+      id: id ?? this.next_id++,
+      created: new Date()
+    };
+
+    this.todos.push(newTodo);
   }
 }
