@@ -1,0 +1,20 @@
+section {
+    background-color: lightgreen;
+    padding: 1px;
+    margin-top: 3px;
+}
+
+.todo {
+    text-align: left;
+}
+
+.todo-title {
+    margin: 4px;
+    font-size: 18px;
+}
+
+.todo span.creation-date {
+    font-size: 14px;
+    float: right;
+    font-weight: lighter;
+}

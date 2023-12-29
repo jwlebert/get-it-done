@@ -1,4 +1,15 @@
 <section class="todo">
-    <h3> {{todo.id}}: {{todo.title}} </h3>
-    <p>Created {{todo.created }} </p>
+    <p class="todo-title"> 
+        {{todo.title}} 
+        <span class="creation-date">
+            Created {{
+                todo.created.toLocaleString('en-CA', { 
+                    dateStyle: 'medium', 
+                    timeStyle: 'short', 
+                    hourCycle: 'h24', 
+                })
+            }}
+            <!-- later prob maybe 12/24h an option-->
+        </span>
+    </p>
 </section>

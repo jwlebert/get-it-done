@@ -22,6 +22,7 @@ export class TodoListComponent {
   }
 
   addTodo() {
+    if ((this.newTodoForm.value.title ?? '') === '') { return; }
     this.todoService.addTodo(
       this.newTodoForm.value.title ?? ''
     )
