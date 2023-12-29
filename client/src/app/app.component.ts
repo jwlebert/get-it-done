@@ -7,7 +7,7 @@ import { TodoComponent } from './todo/todo.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'client';
+  title = 'getitdone';
   imports = [
     TodoComponent
   ];
