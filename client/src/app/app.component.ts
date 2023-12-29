@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodoComponent } from './todo/todo.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,6 @@ import { TodoComponent } from './todo/todo.component';
 export class AppComponent {
   title = 'getitdone';
   imports = [
-    TodoComponent
+    TodoListComponent
   ];
 }
