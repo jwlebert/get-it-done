@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TodoItem } from '../todo-item';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,21 +9,10 @@ import { TodoItem } from '../todo-item';
 })
 
 export class TodoListComponent {
-  todos: TodoItem[] = [
-    {
-      id: 1,
-      title: "test item 1",
-      created: new Date(),
-    },
-    {
-      id: 2,
-      title: "test item 2",
-      created: new Date(),
-    },
-    {
-      id: 3,
-      title: "test item 3",
-      created: new Date(),
-    }
-  ]
+  todos: TodoItem[] = [];
+  todoService: TodoService = inject(TodoService);
+
+  constructor() {
+    this.todos = this.todoService.getAllTodos();
+  }
 }
