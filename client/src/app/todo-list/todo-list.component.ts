@@ -8,9 +8,21 @@ import { TodoItem } from '../todo-item';
 })
 
 export class TodoListComponent {
-  todo_item: TodoItem = {
-    id: 1,
-    title: "test item",
-    created: new Date(),
-  }
+  todos: TodoItem[] = [
+    {
+      id: 1,
+      title: "test item 1",
+      created: new Date(),
+    },
+    {
+      id: 2,
+      title: "test item 2",
+      created: new Date(),
+    },
+    {
+      id: 3,
+      title: "test item 3",
+      created: new Date(),
+    }
+  ]
 }

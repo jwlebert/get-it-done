@@ -1,5 +1,6 @@
 <div id="todos">
-    <app-todo [todo]="todo_item" />
-    <app-todo />
-    <app-todo />
+    <app-todo
+        *ngFor="let todo of todos"
+        [todo]="todo"
+    />
 </div>
