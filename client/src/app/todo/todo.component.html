@@ -1,6 +1,7 @@
 <section class="todo">
     <p class="todo-title"> 
-        {{todo.title}} 
+        {{todo.title}}
+        <button (click)="removeTodo()">Remove</button>
         <span class="creation-date">
             Created {{
                 todo.created.toLocaleString('en-CA', { 

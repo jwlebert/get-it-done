@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { TodoItem } from './todo-item';
-import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +42,10 @@ export class TodoService {
     };
 
     this.todos.push(newTodo);
+  }
+
+  removeTodo(todo: TodoItem) {
+    const index = this.todos.indexOf(todo);
+    this.todos.splice(index, 1);
   }
 }

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject} from '@angular/core';
 import { TodoItem } from '../todo-item';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -9,4 +10,9 @@ import { TodoItem } from '../todo-item';
 
 export class TodoComponent {
   @Input() todo!: TodoItem;
+  todoService: TodoService = inject(TodoService);
+
+  removeTodo(): void {
+    this.todoService.removeTodo(this.todo);
+  }
 }
