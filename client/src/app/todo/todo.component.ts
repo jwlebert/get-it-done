@@ -1,4 +1,5 @@
 import { Component, Input, inject} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { TodoItem } from '../todo-item';
 import { TodoService } from '../todo.service';
 
@@ -11,6 +12,18 @@ import { TodoService } from '../todo.service';
 export class TodoComponent {
   @Input() todo!: TodoItem;
   todoService: TodoService = inject(TodoService);
+
+  todoTitle = new FormGroup({
+    title: new FormControl('')
+  })
+
+  updateTitle(): void {
+    const newTitle = this.todoTitle.value.title ?? '';
+    if (newTitle === '') { return; };
+
+    this.todoService.renameTodo(this.todo, newTitle);
+    this.todoTitle.setValue({'title': ''});
+  }
 
   removeTodo(): void {
     this.todoService.removeTodo(this.todo);

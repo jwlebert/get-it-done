@@ -1,16 +1,16 @@
 <section class="todo">
-    <p class="todo-title"> 
-        {{todo.title}}
-        <button (click)="removeTodo()">Remove</button>
-        <span class="creation-date">
-            Created {{
-                todo.created.toLocaleString('en-CA', { 
-                    dateStyle: 'medium', 
-                    timeStyle: 'short', 
-                    hourCycle: 'h24', 
-                })
-            }}
-            <!-- later prob maybe 12/24h an option-->
-        </span>
-    </p>
+    <form [formGroup]="todoTitle" (change)="updateTitle()">
+        <input id="title" type="text" formControlName="title" [placeholder]="this.todo.title">
+    </form>
+    <button (click)="removeTodo()">Remove</button>
+    <span class="creation-date">
+        Created {{
+            todo.created.toLocaleString('en-CA', { 
+                dateStyle: 'medium', 
+                timeStyle: 'short', 
+                hourCycle: 'h24', 
+            })
+        }}
+        <!-- later prob maybe 12/24h an option-->
+    </span>
 </section>
