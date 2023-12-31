@@ -13,10 +13,6 @@ export class TodoComponent {
   @Input() todo!: TodoItem;
   todoService: TodoService = inject(TodoService);
 
-  todoTitle = new FormGroup({
-    title: new FormControl('')
-  })
-
   removeTodo(): void {
     this.todoService.removeTodo(this.todo);
   }
