@@ -10,16 +10,11 @@ import { TodoService } from '../todo.service';
 })
 
 export class TodoListComponent {
-  todos: TodoItem[] = [];
   todoService: TodoService = inject(TodoService);
 
   newTodoForm = new FormGroup({
     title: new FormControl('New todo...')
   });
-
-  constructor() {
-    this.todos = this.todoService.getAllTodos();
-  }
 
   addTodo() {
     if ((this.newTodoForm.value.title ?? '') === '') { return; }

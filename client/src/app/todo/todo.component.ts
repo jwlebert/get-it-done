@@ -28,4 +28,8 @@ export class TodoComponent {
   removeTodo(): void {
     this.todoService.removeTodo(this.todo);
   }
+
+  moveTodo(posDiff: number): void {
+    this.todoService.moveTodo(this.todo, posDiff);
+  }
 }

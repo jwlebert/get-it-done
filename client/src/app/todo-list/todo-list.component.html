@@ -5,7 +5,7 @@
     </form>
 
     <app-todo
-        *ngFor="let todo of todos"
+        *ngFor="let todo of todoService.getAllTodos('position')"
         [todo]="todo"
     />
 </div>
