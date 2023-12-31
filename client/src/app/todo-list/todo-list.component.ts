@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { TodoItem } from '../todo-item';
 import { TodoService } from '../todo.service';
 
 @Component({
@@ -11,6 +10,7 @@ import { TodoService } from '../todo.service';
 
 export class TodoListComponent {
   todoService: TodoService = inject(TodoService);
+  sorting?: "id" | "position" = 'position';
 
   newTodoForm = new FormGroup({
     title: new FormControl('New todo...')

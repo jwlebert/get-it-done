@@ -1,11 +1,19 @@
 <div id="todos">
+    <form>
+        <label for="sort">Sort by: </label>
+        <select name="sort" id="sort" [(ngModel)]="sorting">
+            <option value="position">position</option>
+            <option value="id">id</option>
+        </select>
+    </form>
+    
     <form [formGroup]="newTodoForm" (submit)="addTodo()">
         <input id="title" type="text" formControlName="title">
         <button type="submit" class="primary">Add Todo</button>
     </form>
 
     <app-todo
-        *ngFor="let todo of todoService.getAllTodos('position')"
+        *ngFor="let todo of todoService.getAllTodos(sorting)"
         [todo]="todo"
     />
 </div>
