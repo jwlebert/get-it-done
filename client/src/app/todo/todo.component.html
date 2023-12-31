@@ -1,6 +1,9 @@
 <section class="todo">
-    <form [formGroup]="todoTitle" (change)="updateTitle()">
-        <input id="title" type="text" formControlName="title" [placeholder]="this.todo.title">
+    <form [formGroup]="todoTitle">
+        <input 
+            id="title" type="text" formControlName="title" required
+            [(ngModel)]="todo.title" name="title"
+        >
     </form>
     <button (click)="removeTodo()">Remove</button>
     <button (click)="moveTodo(1)">Up</button>

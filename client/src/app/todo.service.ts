@@ -81,12 +81,4 @@ export class TodoService {
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
   }
-
-  renameTodo(todo: TodoItem, newTitle: string) {
-    console.log(todo)
-    let t = this.todos.find(t => t === todo) ?? null;
-
-    if (t === null) { return; }
-    t.title = newTitle;
-  }
 }

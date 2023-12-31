@@ -17,14 +17,6 @@ export class TodoComponent {
     title: new FormControl('')
   })
 
-  updateTitle(): void {
-    const newTitle = this.todoTitle.value.title ?? '';
-    if (newTitle === '') { return; };
-
-    this.todoService.renameTodo(this.todo, newTitle);
-    this.todoTitle.setValue({'title': ''});
-  }
-
   removeTodo(): void {
     this.todoService.removeTodo(this.todo);
   }
