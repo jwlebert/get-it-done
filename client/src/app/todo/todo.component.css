@@ -1,5 +1,5 @@
 section.todo {
-    background-color: var(--extra1);
+    background-color: var(--secondary);
 
     border-radius: 10px;
 
@@ -14,26 +14,29 @@ section.todo {
 
 
 div.reordering {
-    width: 5%;
+    width: 24px;
     height: 100%;
+
+    margin-right: 5px;
 }
 
 div.reordering > ion-icon {
     display: block;
+    font-size: 24px;
     color: var(--primary);
 }
 
 
 
 button {
-    background-color: var(--extra1);
+    background-color: var(--secondary);
     border-color: var(--primary);
     border-radius: 5px;
 }
 
 input {
     border: none;
-    background: linear-gradient(180deg, var(--extra1) 95%, var(--primary) 5%);
+    background: linear-gradient(180deg, var(--secondary) 95%, var(--primary) 5%);
     margin-bottom: 3px;
 }
 
