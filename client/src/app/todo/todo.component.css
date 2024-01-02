@@ -1,8 +1,25 @@
 section {
-    background-color: lightgreen;
-    padding: 1px;
+    background-color: var(--extra1);
+
+    border-radius: 10px;
+
+    padding: 5px;
     margin-top: 3px;
+
     text-align: left;
+}
+
+button {
+    background-color: var(--extra1);
+    /* border: 10px ; */
+    border-color: var(--primary);
+    border-radius: 5px;
+}
+
+input {
+    border: none;
+    background: linear-gradient(180deg, var(--extra1) 95%, var(--primary) 5%);
+    margin-bottom: 3px;
 }
 
 .todo-title {
