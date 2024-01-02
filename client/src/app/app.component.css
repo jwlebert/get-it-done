@@ -1,0 +1,29 @@
+div.header {
+    width: 100%;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+div.header > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+div.header > div.theme {
+    width: 50px;
+    font-size: 36px;
+    padding: 7px;
+}
+
+div.header > div.sort {
+    flex-grow: 18;
+}
+
+div.header > div.settings {
+    width: 50px;
+    font-size: 36px;
+    padding: 7px;
+}
