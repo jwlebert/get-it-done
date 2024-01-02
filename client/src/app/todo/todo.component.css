@@ -1,17 +1,65 @@
-section {
-    background-color: lightgreen;
-    padding: 1px;
-    margin-top: 3px;
-    text-align: left;
+section.todo {
+    background-color: var(--secondary);
+    border-radius: 10px;
+
+    padding: 5px;
+    margin: 5px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.todo-title {
-    margin: 4px;
+
+
+div.reordering {
+    width: 24px;
+    height: 100%;
+}
+
+div.reordering > ion-icon {
+    display: block;
+    font-size: 24px;
+    color: var(--contrast);
+}
+
+
+
+ion-icon.complete {
+    font-size: 30px;
+    color: var(--contrast);
+}
+
+button.complete {
+    background-color: var(--secondary);
+    border-color: var(--primary);
+    border-radius: 5px;
+}
+
+
+
+div.todo-content {
+    flex-grow: 1;
+}
+
+div.todo-content > form.title > input#title {
+    background: linear-gradient(180deg, var(--secondary) 95%, var(--primary) 5%);
     font-size: 18px;
+    width: 100%;
+    padding: 3px;
+    border: none;
 }
 
-.todo span.creation-date {
+
+div.todo-content > div.details {
+    padding: 3px;
     font-size: 14px;
-    float: right;
-    font-weight: lighter;
+
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+div.todo-content > div.details > ion-icon {
+    font-size: 17.5px;
 }

@@ -1,21 +1,37 @@
 <section class="todo">
-    <form>
-        <input 
-            id="title" name="title" type="text"
-            [(ngModel)]="todo.title" required
-        >
-    </form>
-    <button (click)="removeTodo()">Remove</button>
-    <button (click)="moveTodo(1)">Up</button>
-    <button (click)="moveTodo(-1)">Down</button>
-    <span class="creation-date">
-        Created {{
-            todo.created.toLocaleString('en-CA', { 
-                dateStyle: 'medium', 
-                timeStyle: 'short', 
-                hourCycle: 'h24', 
-            })
-        }}
-        <!-- later prob maybe 12/24h an option-->
-    </span>
+    <div class="reordering">
+        <ion-icon name="arrow-up-circle-outline" (click)="moveTodo(1)"/>
+        <ion-icon name="arrow-down-circle-outline" (click)="moveTodo(-1)"/>
+    </div>
+
+    <ion-icon 
+        class="complete"
+        [name]="checkmarkHovered ?
+            'checkmark-done-circle-outline' :
+            'checkmark-circle-outline'"
+        (mouseout)="checkmarkHovered = false"
+        (mouseover)="checkmarkHovered = true"
+        (click)="removeTodo()"
+    />
+    
+    <div class="todo-content">
+        <form class="title">
+            <input 
+                id="title" name="title" type="text"
+                [(ngModel)]="todo.title" required
+            >
+        </form>
+        
+        <div class="details">
+            <ion-icon name="time-outline"/>
+            {{
+                todo.created.toLocaleString('en-CA', { 
+                    dateStyle: 'medium', 
+                    timeStyle: 'short', 
+                    hourCycle: 'h24', 
+                })
+            }}
+            <!-- later prob maybe 12/24h an option-->
+        </div>
+    </div>    
 </section>

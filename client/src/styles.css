@@ -1,3 +1,19 @@
+:root {
+    /* For themes */
+    /* https://coolors.co/palette/403f4c-2c2b3c-1b2432-121420 */
+    --primary: #121420;
+    --secondary: #2C2B3C;
+    --extra1: #1B2432;
+    --extra2: #403F4C;
+
+    --contrast: #FFFAFA;
+}
+
 body {
     margin: 0;
+    background-color: var(--primary);
+}
+
+* {
+    color: var(--contrast);
 }

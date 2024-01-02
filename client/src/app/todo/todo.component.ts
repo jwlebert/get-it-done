@@ -13,6 +13,8 @@ export class TodoComponent {
   @Input() todo!: TodoItem;
   todoService: TodoService = inject(TodoService);
 
+  checkmarkHovered: boolean = false;
+
   removeTodo(): void {
     this.todoService.removeTodo(this.todo);
   }
