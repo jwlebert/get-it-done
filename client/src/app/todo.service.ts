@@ -4,6 +4,7 @@ import { TodoItem } from './todo-item';
 @Injectable({
   providedIn: 'root'
 })
+
 export class TodoService {
   todos: TodoItem[] = [
     {
@@ -26,8 +27,7 @@ export class TodoService {
     }
   ]
   next_id: number = 4;
-
-  constructor() { }
+  public confirmRemovals: boolean = true;
 
   getAllTodos(sortBy?: "id" | "position"): TodoItem[] {
     switch (sortBy ?? null) {
@@ -40,8 +40,6 @@ export class TodoService {
       default:
         throw Error;
     }
-    
-    return this.todos;
   }
 
   getTodoById(id: number): TodoItem | undefined {
@@ -78,6 +76,12 @@ export class TodoService {
   }
 
   removeTodo(todo: TodoItem) {
+    if (this.confirmRemovals) {
+      if (
+        !confirm(`Are you sure you want to delete "${todo.title}"?`)
+      ) { return; }
+    }
+
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
   }
