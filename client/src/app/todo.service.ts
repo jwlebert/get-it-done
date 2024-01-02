@@ -48,11 +48,11 @@ export class TodoService {
     return this.todos.find(todo => todo.id === id);
   }
 
-  addTodo(title: string, id?: number) {
+  addTodo(title: string) {
     const newTodo: TodoItem = {
       title: title,
       position: this.todos.length,
-      id: id ?? this.next_id++,
+      id: this.next_id++,
       created: new Date()
     };
 
