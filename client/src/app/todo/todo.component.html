@@ -23,17 +23,15 @@
         </form>
         
         <div class="details">
-            <span class="creation-date">
-                <ion-icon name="time-outline"/>
-                {{
-                    todo.created.toLocaleString('en-CA', { 
-                        dateStyle: 'medium', 
-                        timeStyle: 'short', 
-                        hourCycle: 'h24', 
-                    })
-                }}
-                <!-- later prob maybe 12/24h an option-->
-            </span>
+            <ion-icon name="time-outline"/>
+            {{
+                todo.created.toLocaleString('en-CA', { 
+                    dateStyle: 'medium', 
+                    timeStyle: 'short', 
+                    hourCycle: 'h24', 
+                })
+            }}
+            <!-- later prob maybe 12/24h an option-->
         </div>
     </div>    
 </section>

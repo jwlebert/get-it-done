@@ -44,17 +44,22 @@ div.todo-content {
 
 div.todo-content > form.title > input#title {
     background: linear-gradient(180deg, var(--secondary) 95%, var(--primary) 5%);
+    font-size: 18px;
     width: 100%;
     padding: 3px;
     border: none;
 }
 
 
-/* div.todo-content > div.details {
+div.todo-content > div.details {
+    padding: 3px;
+    font-size: 14px;
+
     display: flex;
+    align-items: center;
+    gap: 2px;
 }
-div.todo-content > span {
-    height: 100%;
-    aspect-ratio: 1 / 1;
-    font-size: inherit;
-} */
+
+div.todo-content > div.details > ion-icon {
+    font-size: 17.5px;
+}
