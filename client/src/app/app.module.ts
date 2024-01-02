@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IonicModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
