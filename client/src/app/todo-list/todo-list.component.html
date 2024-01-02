@@ -5,6 +5,12 @@
             <option value="position">position</option>
             <option value="id">id</option>
         </select>
+        &nbsp;
+        <label for="confirmRemoval">Require confirmation for todo removals?</label>
+        <input
+            id="confirmRemoval" name="confirmRemovals" type="checkbox"
+            [(ngModel)]="todoService.confirmRemovals"
+        >
     </form>
     
     <form [formGroup]="newTodoForm" (submit)="addTodo()">

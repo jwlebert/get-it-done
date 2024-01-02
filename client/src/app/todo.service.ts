@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { TodoItem } from './todo-item';
 
+type SortingMethod = "id" | "position";
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class TodoService {
   todos: TodoItem[] = [
     {
@@ -26,10 +29,9 @@ export class TodoService {
     }
   ]
   next_id: number = 4;
+  public confirmRemovals: boolean = true;
 
-  constructor() { }
-
-  getAllTodos(sortBy?: "id" | "position"): TodoItem[] {
+  getAllTodos(sortBy?: SortingMethod): TodoItem[] {
     switch (sortBy ?? null) {
       case null:
         return this.todos;
@@ -40,19 +42,17 @@ export class TodoService {
       default:
         throw Error;
     }
-    
-    return this.todos;
   }
 
   getTodoById(id: number): TodoItem | undefined {
     return this.todos.find(todo => todo.id === id);
   }
 
-  addTodo(title: string, id?: number) {
+  addTodo(title: string) {
     const newTodo: TodoItem = {
       title: title,
       position: this.todos.length,
-      id: id ?? this.next_id++,
+      id: this.next_id++,
       created: new Date()
     };
 
@@ -78,6 +78,12 @@ export class TodoService {
   }
 
   removeTodo(todo: TodoItem) {
+    if (this.confirmRemovals) {
+      if (
+        !confirm(`Are you sure you want to delete "${todo.title}"?`)
+      ) { return; }
+    }
+
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
   }
