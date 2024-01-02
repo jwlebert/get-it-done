@@ -14,21 +14,26 @@
         (click)="removeTodo()"
     />
     
-    <form class="title">
-        <input 
-            id="title" name="title" type="text"
-            [(ngModel)]="todo.title" required
-        >
-    </form>
-    
-    <span class="creation-date">
-        Created {{
-            todo.created.toLocaleString('en-CA', { 
-                dateStyle: 'medium', 
-                timeStyle: 'short', 
-                hourCycle: 'h24', 
-            })
-        }}
-        <!-- later prob maybe 12/24h an option-->
-    </span>
+    <div class="todo-content">
+        <form class="title">
+            <input 
+                id="title" name="title" type="text"
+                [(ngModel)]="todo.title" required
+            >
+        </form>
+        
+        <div class="details">
+            <span class="creation-date">
+                <ion-icon name="time-outline"/>
+                {{
+                    todo.created.toLocaleString('en-CA', { 
+                        dateStyle: 'medium', 
+                        timeStyle: 'short', 
+                        hourCycle: 'h24', 
+                    })
+                }}
+                <!-- later prob maybe 12/24h an option-->
+            </span>
+        </div>
+    </div>    
 </section>

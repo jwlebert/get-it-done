@@ -1,16 +1,13 @@
 section.todo {
     background-color: var(--secondary);
-
     border-radius: 10px;
 
     padding: 5px;
-    margin-top: 3px;
-
-    text-align: left;
+    margin: 5px;
 
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
 
@@ -33,26 +30,31 @@ ion-icon.complete {
     color: var(--contrast);
 }
 
-
 button.complete {
     background-color: var(--secondary);
     border-color: var(--primary);
     border-radius: 5px;
 }
 
-input {
-    border: none;
+
+
+div.todo-content {
+    flex-grow: 1;
+}
+
+div.todo-content > form.title > input#title {
     background: linear-gradient(180deg, var(--secondary) 95%, var(--primary) 5%);
-    margin-bottom: 3px;
+    width: 100%;
+    padding: 3px;
+    border: none;
 }
 
-.todo-title {
-    margin: 4px;
-    font-size: 18px;
-}
 
-.todo span.creation-date {
-    font-size: 14px;
-    float: right;
-    font-weight: lighter;
+/* div.todo-content > div.details {
+    display: flex;
 }
+div.todo-content > span {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    font-size: inherit;
+} */
