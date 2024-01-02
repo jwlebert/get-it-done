@@ -3,13 +3,23 @@
         <ion-icon name="arrow-up-circle-outline" (click)="moveTodo(1)"/>
         <ion-icon name="arrow-down-circle-outline" (click)="moveTodo(-1)"/>
     </div>
-    <form>
+
+    <ion-icon 
+        class="complete"
+        [name]="checkmarkHovered ?
+            'checkmark-done-circle-outline' :
+            'checkmark-circle-outline'"
+        (mouseout)="checkmarkHovered = false"
+        (mouseover)="checkmarkHovered = true"
+        (click)="removeTodo()"
+    />
+    
+    <form class="title">
         <input 
             id="title" name="title" type="text"
             [(ngModel)]="todo.title" required
         >
     </form>
-    <button (click)="removeTodo()">Remove</button>
     
     <span class="creation-date">
         Created {{
