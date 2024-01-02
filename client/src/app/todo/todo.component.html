@@ -1,4 +1,8 @@
 <section class="todo">
+    <div class="reordering">
+        <ion-icon name="arrow-up-circle-outline" (click)="moveTodo(1)"/>
+        <ion-icon name="arrow-down-circle-outline" (click)="moveTodo(-1)"/>
+    </div>
     <form>
         <input 
             id="title" name="title" type="text"
@@ -6,8 +10,7 @@
         >
     </form>
     <button (click)="removeTodo()">Remove</button>
-    <button (click)="moveTodo(1)">Up</button>
-    <button (click)="moveTodo(-1)">Down</button>
+    
     <span class="creation-date">
         Created {{
             todo.created.toLocaleString('en-CA', { 

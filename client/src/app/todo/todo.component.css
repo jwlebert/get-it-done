@@ -1,4 +1,4 @@
-section {
+section.todo {
     background-color: var(--extra1);
 
     border-radius: 10px;
@@ -7,11 +7,26 @@ section {
     margin-top: 3px;
 
     text-align: left;
+
+    display: flex;
 }
+
+
+
+div.reordering {
+    width: 5%;
+    height: 100%;
+}
+
+div.reordering > ion-icon {
+    display: block;
+    color: var(--primary);
+}
+
+
 
 button {
     background-color: var(--extra1);
-    /* border: 10px ; */
     border-color: var(--primary);
     border-radius: 5px;
 }
