@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { TodoItem } from './todo-item';
 
+type SortingMethod = "id" | "position";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,7 +31,7 @@ export class TodoService {
   next_id: number = 4;
   public confirmRemovals: boolean = true;
 
-  getAllTodos(sortBy?: "id" | "position"): TodoItem[] {
+  getAllTodos(sortBy?: SortingMethod): TodoItem[] {
     switch (sortBy ?? null) {
       case null:
         return this.todos;
