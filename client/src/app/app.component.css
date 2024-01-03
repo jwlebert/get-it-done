@@ -5,7 +5,7 @@ div.header {
     align-items: center; */
 }
 
-div.header > div {
+div.header > div, div.header > form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,12 +18,16 @@ div.header > div.theme, div.header > div.settings {
     padding: 7px;
 }
 
-div.header > div.sort {
+div.header > form.sort {
     flex-grow: 1;
     gap: 5px;
     font-size: 24px;
 }
 
-div.header > div.sort > ion-icon {
+div.header > form.sort ion-icon {
     font-size: 36px;
+}
+
+div.header > form.sort > input[type="radio"] {
+    display: none;
 }

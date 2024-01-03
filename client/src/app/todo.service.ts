@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TodoItem } from './todo-item';
 
-type SortingMethod = "id" | "position";
+export type SortingMethod = "created" | "position";
 
 @Injectable({
   providedIn: 'root'
@@ -29,14 +29,19 @@ export class TodoService {
     }
   ]
   next_id: number = 4;
-  public confirmRemovals: boolean = true;
+  confirmRemovals: boolean = true;
+  sortingMethod: SortingMethod = 'position';
 
-  getAllTodos(sortBy?: SortingMethod): TodoItem[] {
-    switch (sortBy ?? null) {
-      case null:
-        return this.todos;
-      case 'id':
-        return [...this.todos].sort((x, y) => x.id - y.id);
+  getAllTodos(sorted: boolean = true): TodoItem[] {
+    if (!sorted) {
+      return this.todos;
+    }
+
+    switch (this.sortingMethod) {
+      case 'created':
+        return [...this.todos].sort(
+          (x, y) => x.created.getSeconds() - y.created.getSeconds()
+          );
       case 'position':
         return [...this.todos].sort((x, y) => x.position - y.position);
       default:

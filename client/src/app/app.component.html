@@ -4,15 +4,28 @@
         <!-- <ion-icon name="sunny-outline"/> -->
         <!-- on hover, fill -->
     </div>
-    <div class="sort">
+    <form class="sort">
         Sort by
-        <ion-icon 
-            name="list-outline" title="Sort by position"
-        />
-        <ion-icon 
-            name="time-outline" title="Sort by time created"
-        />
-    </div>
+        <label for="position">
+            <ion-icon 
+                name="list-outline" title="Sort by position"
+            />
+        </label>
+        <input 
+            type="radio" name="sort" id="position" value="position"
+            [(ngModel)]="todoService.sortingMethod"
+        >
+
+        <label for="created">
+            <ion-icon 
+                name="time-outline" title="Sort by time created"
+            />
+        </label>
+        <input
+            type="radio" name="sort" id="created" value="created"
+            [(ngModel)]="todoService.sortingMethod"
+        >        
+    </form>
     <div class="settings">
         <ion-icon name="settings-outline"/>
     </div>

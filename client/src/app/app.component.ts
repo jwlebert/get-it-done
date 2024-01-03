@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { TodoListComponent } from './todo-list/todo-list.component';
+import { Component, inject } from '@angular/core';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,6 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 })
 export class AppComponent {
   title = 'getitdone';
-  imports = [
-    TodoListComponent
-  ];
+
+  todoService: TodoService = inject(TodoService);
 }

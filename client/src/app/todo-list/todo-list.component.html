@@ -1,11 +1,5 @@
 <div id="todos">
     <form>
-        <label for="sort">Sort by: </label>
-        <select name="sort" id="sort" [(ngModel)]="sorting">
-            <option value="position">position</option>
-            <option value="id">id</option>
-        </select>
-        &nbsp;
         <label for="confirmRemoval">Require confirmation for todo removals?</label>
         <input
             id="confirmRemoval" name="confirmRemovals" type="checkbox"
@@ -19,7 +13,7 @@
     </form>
 
     <app-todo
-        *ngFor="let todo of todoService.getAllTodos(sorting)"
+        *ngFor="let todo of todoService.getAllTodos()"
         [todo]="todo"
     />
 </div>
