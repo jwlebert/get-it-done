@@ -30,12 +30,6 @@ ion-icon.complete {
     color: var(--contrast);
 }
 
-button.complete {
-    background-color: var(--secondary);
-    border-color: var(--primary);
-    border-radius: 5px;
-}
-
 
 
 div.todo-content {

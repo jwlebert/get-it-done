@@ -12,18 +12,18 @@ div.header > div {
 }
 
 
-div.header > div.theme {
+div.header > div.theme, div.header > div.settings {
     width: 50px;
     font-size: 36px;
     padding: 7px;
 }
 
 div.header > div.sort {
-    flex-grow: 18;
+    flex-grow: 1;
+    gap: 5px;
+    font-size: 24px;
 }
 
-div.header > div.settings {
-    width: 50px;
+div.header > div.sort > ion-icon {
     font-size: 36px;
-    padding: 7px;
 }
