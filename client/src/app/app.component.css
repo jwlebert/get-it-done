@@ -1,3 +1,7 @@
+ion-icon {
+    cursor: pointer;
+}
+
 div.header {
     width: 100%;
     display: flex;
