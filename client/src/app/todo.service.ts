@@ -77,9 +77,9 @@ export class TodoService {
 
     if (replacedTodo !== null) {
       replacedTodo.position += posDiff;
+      todo.position -= posDiff;
+      this.sortingMethod = 'position';
     }
-
-    todo.position -= posDiff;
   }
 
   removeTodo(todo: TodoItem) {
