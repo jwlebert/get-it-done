@@ -1,7 +1,6 @@
 <div class="header">
     <div class="theme" (click)="changeTheme()">
-        <ion-icon name="moon-outline"/>
-        <!-- <ion-icon name="sunny-outline"/> -->
+        <ion-icon [name]="currentTheme ? 'sunny-outline' : 'moon-outline'"/>
         <!-- on hover, fill -->
     </div>
     <form class="sort">

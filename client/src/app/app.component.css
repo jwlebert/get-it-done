@@ -1,11 +1,9 @@
 div.header {
     width: 100%;
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
 }
 
-div.header > div, div.header > form {
+div.header > div, div.header > form, label {
     display: flex;
     justify-content: center;
     align-items: center;
