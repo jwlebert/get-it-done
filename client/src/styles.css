@@ -10,6 +10,7 @@
 }
 
 html {
+    transition: all 250ms;
     background-color: var(--primary);
 }
 
@@ -18,5 +19,6 @@ body {
 }
 
 * {
+    /* transition: all 250ms; */
     color: var(--contrast);
 }
