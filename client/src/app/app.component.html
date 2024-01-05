@@ -31,8 +31,8 @@
         >        
     </form>
     <div class="settings">
-        <ion-icon name="settings-outline"/>
-        <div class="settings-box">
+        <ion-icon name="settings-outline" (click)="toggleSettingsMenu()"/>
+        <div class="settings-box hidden">
             <form>
                 <label for="confirmRemoval">Require confirmation for todo removals?</label>
                 <input

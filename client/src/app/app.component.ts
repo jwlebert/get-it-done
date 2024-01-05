@@ -40,4 +40,10 @@ export class AppComponent {
       document.documentElement.style.setProperty(`--${variable}`, value);
     }
   }
+
+  toggleSettingsMenu() {
+    const settingsMenu = document.getElementsByClassName('settings-box')[0];
+
+    settingsMenu.classList.toggle('hidden');
+  }
 }

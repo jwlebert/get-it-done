@@ -49,6 +49,10 @@ div.settings-box {
     background-color: var(--secondary);
 }
 
+div.settings-box.hidden {
+    display: none;
+}
+
 div.settings-box > form {
     display: grid;
     grid-template-columns: auto auto;
