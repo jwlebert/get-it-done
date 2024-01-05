@@ -28,10 +28,9 @@
                 todo.created.toLocaleString('en-CA', { 
                     dateStyle: 'medium', 
                     timeStyle: 'short', 
-                    hourCycle: 'h24', 
+                    hourCycle: todoService.settings.timeFormat 
                 })
             }}
-            <!-- later prob maybe 12/24h an option-->
         </div>
     </div>    
 </section>

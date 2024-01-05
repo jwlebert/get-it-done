@@ -1,12 +1,4 @@
-<div id="todos">
-    <form>
-        <label for="confirmRemoval">Require confirmation for todo removals?</label>
-        <input
-            id="confirmRemoval" name="confirmRemovals" type="checkbox"
-            [(ngModel)]="todoService.confirmRemovals"
-        >
-    </form>
-    
+<div id="todos">    
     <form [formGroup]="newTodoForm" (submit)="addTodo()">
         <input id="title" type="text" formControlName="title">
         <button type="submit" class="primary">Add Todo</button>

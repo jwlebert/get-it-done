@@ -11,11 +11,6 @@ export class AppComponent {
   title = 'getitdone';
   todoService: TodoService = inject(TodoService);
 
-  settings = {
-    'confirmRemovals': false,
-    'timeFormat': '24h',
-  }
-
   currentTheme: 'dark' | 'light' = 'dark';
   themes = {
     'hovered': '-outline',

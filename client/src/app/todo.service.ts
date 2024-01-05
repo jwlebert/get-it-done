@@ -28,16 +28,25 @@ export class TodoService {
       created: new Date(),
     }
   ]
+
+  settings: {
+    confirmRemovals: boolean,
+    timeFormat: 'h12' | 'h24',
+    sortingMethod: SortingMethod,
+  } = {
+    confirmRemovals: true,
+    timeFormat: 'h24',
+    sortingMethod: 'position',
+  }
+  
   next_id: number = 4;
-  confirmRemovals: boolean = true;
-  sortingMethod: SortingMethod = 'position';
 
   getAllTodos(sorted: boolean = true): TodoItem[] {
     if (!sorted) {
       return this.todos;
     }
 
-    switch (this.sortingMethod) {
+    switch (this.settings.sortingMethod) {
       case 'created':
         return [...this.todos].sort(
           (x, y) => x.created.getSeconds() - y.created.getSeconds()
@@ -78,12 +87,12 @@ export class TodoService {
     if (replacedTodo !== null) {
       replacedTodo.position += posDiff;
       todo.position -= posDiff;
-      this.sortingMethod = 'position';
+      this.settings.sortingMethod = 'position';
     }
   }
 
   removeTodo(todo: TodoItem) {
-    if (this.confirmRemovals) {
+    if (this.settings.confirmRemovals) {
       if (
         !confirm(`Are you sure you want to delete "${todo.title}"?`)
       ) { return; }
