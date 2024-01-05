@@ -7,18 +7,21 @@ div.header {
     display: flex;
 }
 
+/* General */
+
 div.header > div, div.header > form, label {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
 div.header > div.theme, div.header > div.settings {
     width: 50px;
     font-size: 36px;
     padding: 7px;
 }
+
+/* Sorting Bar */
 
 div.header > form.sort {
     flex-grow: 1;
@@ -32,4 +35,37 @@ div.header > form.sort ion-icon {
 
 div.header > form.sort > input[type="radio"] {
     display: none;
+}
+
+/* Settings Box */
+
+div.settings-box {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+
+    padding: 8px;
+    border-radius: 5px;
+    background-color: var(--secondary);
+}
+
+div.settings-box > form {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 3px;
+
+    font-size: small;
+}
+
+div.settings-box > form > input {
+    accent-color: var(--contrast);
+}
+
+div.settings-box > form > select {
+    border: 1px solid var(--primary);
+    background-color: var(--secondary);
+}
+
+div.settings-box > form > select > option {
+    color: contrast;
 }

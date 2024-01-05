@@ -32,6 +32,29 @@
     </form>
     <div class="settings">
         <ion-icon name="settings-outline"/>
+        <div class="settings-box">
+            <form>
+                <label for="confirmRemovals">
+                    Confirm completion of todos?
+                </label>
+                <input 
+                id="confirmRemovals" type="checkbox"
+                [(ngModel)]="settings.confirmRemovals"
+                />
+                
+                <label for="timeFormat">
+                    How to format time?
+                </label>
+                <select id="timeFormat">
+                    <option [(ngModel)]="settings.timeFormat" value="24h">
+                        24h
+                    </option>
+                    <option [(ngModel)]="settings.timeFormat" value="12h">
+                        12h
+                    </option>
+                </select>
+            </form>
+        </div>
     </div>
 </div>
 
