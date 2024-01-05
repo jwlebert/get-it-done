@@ -1,7 +1,10 @@
 <div class="header">
     <div class="theme" (click)="changeTheme()">
-        <ion-icon [name]="currentTheme ? 'sunny-outline' : 'moon-outline'"/>
-        <!-- on hover, fill -->
+        <ion-icon
+            [name]="themes[currentTheme].icon + themes.hovered"
+            (mouseout)="themes.hovered = '-outline'"
+            (mouseover)="themes.hovered = ''"
+        />
     </div>
     <form class="sort">
         Sort by
