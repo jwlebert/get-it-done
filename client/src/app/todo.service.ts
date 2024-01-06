@@ -100,5 +100,6 @@ export class TodoService {
 
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
+    // this.todos = this.todos.filter(t => t !== todo);
   }
 }

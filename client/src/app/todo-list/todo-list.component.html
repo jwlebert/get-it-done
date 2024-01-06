@@ -1,11 +1,14 @@
-<div id="todos">    
-    <form [formGroup]="newTodoForm" (submit)="addTodo()">
-        <input id="title" type="text" formControlName="title">
-        <button type="submit" class="primary">Add Todo</button>
-    </form>
+<form class="newTodo" [formGroup]="newTodoForm" (submit)="addTodo()">
+    <button type="submit" class="primary">
+        <ion-icon name="add-circle-outline"></ion-icon>
+    </button>
+    <input
+        id="title" type="text" formControlName="title"
+        [(ngModel)]="newTodoForm.value.title"
+    >
+</form>
 
-    <app-todo
-        *ngFor="let todo of todoService.getAllTodos()"
-        [todo]="todo"
-    />
-</div>
+<app-todo
+    *ngFor="let todo of todoService.getAllTodos()"
+    [todo]="todo"
+/>
