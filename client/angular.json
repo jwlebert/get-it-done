@@ -21,7 +21,7 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/assets/favicon.ico",
               "src/assets",
               {
                 "glob": "**/*.svg",
@@ -161,11 +161,6 @@
         }
       }
     }
-  },
-  "cli": {
-    "schematicCollections": [
-      "@ionic/angular-toolkit"
-    ]
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

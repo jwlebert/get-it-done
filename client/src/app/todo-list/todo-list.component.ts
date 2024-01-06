@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { TodoService } from '../todo.service';
 
 @Component({
@@ -18,8 +18,11 @@ export class TodoListComponent {
 
   addTodo() {
     if ((this.newTodoForm.value.title ?? '') === '') { return; }
+
     this.todoService.addTodo(
       this.newTodoForm.value.title ?? ''
-    )
+    );
+
+    this.newTodoForm.value.title = 'New todo...';
   }
 }

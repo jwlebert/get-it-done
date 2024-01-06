@@ -1,3 +1,35 @@
-div#todos {
-    margin: 5px;
+form.newTodo {
+    padding: 16px 24px;
+    
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+form.newTodo > button {
+    all: unset;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+form.newTodo > button > ion-icon {
+    font-size: 36px;
+    color: var(--contrast);
+}
+
+form.newTodo > button > ion-icon:active {
+    filter: drop-shadow(
+        0 0 0.2rem 
+        color-mix(in srgb, var(--contrast), transparent 80%)
+        );
+}
+
+form.newTodo > input[type="text"] {
+    flex-grow: 1;
+    font-size: 20px;
+    border: none;
+    background: linear-gradient(180deg, var(--primary) 92%, var(--secondary) 8%);
 }

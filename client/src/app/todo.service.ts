@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { TodoItem } from './todo-item';
 
-type SortingMethod = "id" | "position";
+export type SortingMethod = "created" | "position";
+export type TimeFormat = 'h12' | 'h24';
 
 @Injectable({
   providedIn: 'root'
@@ -28,15 +29,29 @@ export class TodoService {
       created: new Date(),
     }
   ]
-  next_id: number = 4;
-  public confirmRemovals: boolean = true;
 
-  getAllTodos(sortBy?: SortingMethod): TodoItem[] {
-    switch (sortBy ?? null) {
-      case null:
-        return this.todos;
-      case 'id':
-        return [...this.todos].sort((x, y) => x.id - y.id);
+  settings: {
+    confirmRemovals: boolean,
+    timeFormat: TimeFormat,
+    sortingMethod: SortingMethod,
+  } = {
+    confirmRemovals: true,
+    timeFormat: 'h24',
+    sortingMethod: 'position',
+  }
+  
+  next_id: number = 4;
+
+  getAllTodos(sorted: boolean = true): TodoItem[] {
+    if (!sorted) {
+      return this.todos;
+    }
+
+    switch (this.settings.sortingMethod) {
+      case 'created':
+        return [...this.todos].sort(
+          (x, y) => x.created.getSeconds() - y.created.getSeconds()
+          );
       case 'position':
         return [...this.todos].sort((x, y) => x.position - y.position);
       default:
@@ -72,13 +87,13 @@ export class TodoService {
 
     if (replacedTodo !== null) {
       replacedTodo.position += posDiff;
+      todo.position -= posDiff;
+      this.settings.sortingMethod = 'position';
     }
-
-    todo.position -= posDiff;
   }
 
   removeTodo(todo: TodoItem) {
-    if (this.confirmRemovals) {
+    if (this.settings.confirmRemovals) {
       if (
         !confirm(`Are you sure you want to delete "${todo.title}"?`)
       ) { return; }
@@ -86,5 +101,6 @@ export class TodoService {
 
     const index = this.todos.indexOf(todo);
     this.todos.splice(index, 1);
+    // this.todos = this.todos.filter(t => t !== todo);
   }
 }
