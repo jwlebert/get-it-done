@@ -162,11 +162,6 @@
       }
     }
   },
-  "cli": {
-    "schematicCollections": [
-      "@ionic/angular-toolkit"
-    ]
-  },
   "schematics": {
     "@ionic/angular-toolkit:component": {
       "styleext": "scss"
