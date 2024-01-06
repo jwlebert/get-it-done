@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { TodoItem } from './todo-item';
 
 export type SortingMethod = "created" | "position";
+export type TimeFormat = 'h12' | 'h24';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class TodoService {
 
   settings: {
     confirmRemovals: boolean,
-    timeFormat: 'h12' | 'h24',
+    timeFormat: TimeFormat,
     sortingMethod: SortingMethod,
   } = {
     confirmRemovals: true,
