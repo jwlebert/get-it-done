@@ -1,10 +1,11 @@
 <div class="theme" (click)="changeTheme()">
     <ion-icon
-        [name]="themes[currentTheme].icon + themes.hovered"
-        (mouseout)="themes.hovered = '-outline'"
-        (mouseover)="themes.hovered = ''"
+        [name]="themes[currentTheme].icon + iconsHovered['theme']"
+        (mouseout)="iconsHovered['theme'] = '-outline'"
+        (mouseover)="iconsHovered['theme'] = ''"
     />
 </div>
+
 <form class="sort">
     Sort by
     <label for="position">
@@ -29,8 +30,14 @@
         [(ngModel)]="todoService.settings.sortingMethod"
     >        
 </form>
+
 <div class="settings">
-    <ion-icon name="settings-outline" (click)="toggleSettingsMenu()"/>
+    <ion-icon
+        [name]="'settings' + iconsHovered['settings']"
+        (mouseout)="iconsHovered['settings'] = '-outline'"
+        (mouseover)="iconsHovered['settings'] = ''"
+        (click)="toggleSettingsMenu()"
+    />
     <div class="settings-box hidden">
         <form>
             <label for="confirmRemoval">Require confirmation for todo removals?</label>
