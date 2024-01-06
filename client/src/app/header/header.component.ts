@@ -9,7 +9,10 @@ import { TodoService } from '../todo.service';
 export class HeaderComponent {
   todoService: TodoService = inject(TodoService);
 
-  currentTheme: 'dark' | 'light' = 'dark';
+  currentTheme: 'dark' | 'light' = 
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) // check prefered theme
+    ? 'dark' : 'light';
+    
   themes = {
     'hovered': '-outline',
     'dark': {
