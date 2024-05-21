@@ -169,5 +169,8 @@
     "@ionic/angular-toolkit:page": {
       "styleext": "scss"
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
